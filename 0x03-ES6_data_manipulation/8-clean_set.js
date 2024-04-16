@@ -1,5 +1,7 @@
 export default function cleanSet(set, prefix) {
-  if (!set || !prefix) return '';
+  if (!set || !prefix || !(set instanceof Set) || typeof prefix !== 'string') {
+    return '';
+  }
   return [...set]
     .filter((item) => item.startsWith(prefix))
     .map((item) => item.slice(prefix.length))
