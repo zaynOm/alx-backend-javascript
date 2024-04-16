@@ -1,5 +1,5 @@
 export default function cleanSet(set, prefix) {
-  if (prefix === '') return '';
+  if (!set || !prefix) return '';
   return [...set]
     .filter((item) => item.startsWith(prefix))
     .map((item) => item.slice(prefix.length))
