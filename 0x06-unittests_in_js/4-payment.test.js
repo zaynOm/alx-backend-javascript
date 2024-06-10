@@ -10,7 +10,7 @@ describe('sendPaymentRequestToApi', function() {
     stub.returns(10);
     sendPaymentRequestToApi(100, 20);
     expect(stub.calledOnceWithExactly('SUM', 100, 20)).to.be.true;
-    expect(spy.calledOnceWithExactly('The total is: 10'));
+    expect(spy.calledOnceWithExactly('The total is: 10')).to.be.true;
     stub.restore();
     spy.restore();
   });
