@@ -9,8 +9,8 @@ function countStudents(path) {
     fs.readFile(path, 'utf-8', (err, data) => {
       if (err) return rejects(Error('Cannot load the database'));
 
-      const students = data.split('\r\n');
-      students.splice(0, 1);
+      const students = data.split('\n');
+      students.shift();
 
       const fields = {};
       students.forEach((row) => {
@@ -30,7 +30,6 @@ function countStudents(path) {
 }
 
 app.get('/', (req, res) => {
-  res.setHeader('Content-Type', 'text/plain');
   res.send('Hello Holberton School!');
 });
 
