@@ -40,7 +40,7 @@ describe("calculateNumber", function () {
 
   describe("DIVIDE operations", function () {
     it("Should return Error, when a = 1.6 and b = 0", function () {
-      expect(calculateNumber("DIVIDE", 1.6, 0), "Error");
+      expect(calculateNumber("DIVIDE", 1.6, 0)).to.be.equal("Error");
     });
 
     it("Should return 3, when a = 9 and b = 3", function () {
@@ -52,7 +52,7 @@ describe("calculateNumber", function () {
     });
 
     it("should return 1.5 when a = -2.7 and b = -2.2", function () {
-      expect(calculateNumber("DIVIDE", -2.7, -2.2), 1.5);
+      expect(calculateNumber("DIVIDE", -2.7, -2.2)).to.be.equal(1.5);
     });
   });
 });
